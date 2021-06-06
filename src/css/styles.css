@@ -1,0 +1,198 @@
+:root {
+  --just-blue: #0f56b3;
+  --just-white: #fff;
+  --just-black: #000;
+  --soft-black: #1a1a1a;
+  --soft-gray: #fbfbfb;
+}
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background: url('../assets/countdown.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 100vh;
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+.countdown {
+  display: none;
+  gap: 0.5rem;
+}
+.countDown-item {
+  color: var(--just-white);
+}
+.item-number {
+  padding-inline-start: 0.3125rem;
+  padding-inline-end: 0.3125rem;
+  padding-block-start: 0.625rem;
+  padding-block-end: 0.625rem;
+  background-color: var(--soft-black);
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 2.875rem;
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
+.countDown-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4375rem;
+  font-size: 0.75rem;
+}
+.datepicker {
+  box-sizing: border-box;
+  inline-size: 100%;
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.5rem;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+.btn {
+  margin-block-start: 1rem;
+  inline-size: 100%;
+  padding-block-start: 0.7rem;
+  padding-block-end: 0.7rem;
+  border: none;
+  background-color: #1e86ff;
+  border-radius: 0.25rem;
+  color: var(--just-white);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+@media screen and (min-width: 768px) {
+  .item-number {
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-block-start: 2rem;
+    padding-block-end: 2rem;
+  }
+  .countdown {
+    gap: 1.5rem;
+  }
+  .item-number {
+    font-size: 9.25rem;
+    line-height: 9.375rem;
+    border-radius: 1rem;
+  }
+  .item-label {
+    font-size: 2.5rem;
+    line-height: 2.875rem;
+  }
+}
+.modal {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  padding-inline-start: 0.75rem;
+  padding-inline-end: 0.75rem;
+  padding-block-start: 1rem;
+  padding-block-end: 1rem;
+  border-start-start-radius: 0.25rem;
+  border-start-end-radius: 0.25rem;
+  background-color: var(--just-white);
+}
+.modal.is-active {
+  display: block;
+}
+.message {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  inline-size: 50%;
+  padding-inline-start: 0.5rem;
+  scroll-padding-inline-end: 0.5rem;
+  block-size: 2.5rem;
+  border-radius: 0.25rem;
+  background-color: rgb(233, 116, 116);
+  color: var(--soft-gray);
+  top: 0.625rem;
+  right: 0.625rem;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.message.is-active {
+  visibility: visible;
+}
+
+@media screen and (min-width: 480px) {
+  .modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    inline-size: 60%;
+    block-size: 6.25rem;
+    border-radius: 0.25rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modal {
+    inline-size: 20%;
+  }
+  .message {
+    inline-size: 10%;
+  }
+}
+
+/* .modal.is-active .modal-layer {
+  display: block;
+} */
+/* .modal.is-active .modal-content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form {
+  inline-size: 100%;
+}
+form input[type='number'] {
+  display: block;
+  box-sizing: border-box;
+  inline-size: 100%;
+  padding-block-start: 0.75rem;
+  padding-block-end: 0.75rem;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+form button {
+  margin-block-start: 1rem;
+  inline-size: 100%;
+  padding-inline-start: 1rem;
+  padding-inline-end: 1rem;
+  padding-block-start: 0.75rem;
+  padding-block-end: 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--just-blue);
+  color: var(--just-white);
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+} */
